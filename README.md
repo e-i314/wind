@@ -6,12 +6,6 @@ These are the measurement results from a ground-fixed ultrasonic anemometer, a d
 　センサー ULSA M5B (2025/4/22からULSA PROに変更）https://strvsn.net/ulsa
  　データファイル名　wind_11.txt 等
 　　データ詳細
-
-2　ドローン＋超音波風速計
-　DJI Marvic 2S
- 　ドローンログ名　wx_data_20250125_123211.txt　等
- 超音波風速計　TriSonica Mini　https://www.jepico.co.jp/lp_Anemoment.html
-　　データファイル名　wx_data_20250125_123211.txt　等
 　　ULSA SimpleCSVプロトコル
 
          #,0,1,359,12.123,24.123,340.123,21.12\r\n
@@ -28,6 +22,13 @@ These are the measurement results from a ground-fixed ultrasonic anemometer, a d
         I: 改行コード
 
 https://strvsn.notion.site/strvsn/ULSA-d27ee8be0f4940fbbdfbd0df1c06e880#7d444ea0a948479d8fbeb9451d2ad232
+
+
+2　ドローン＋超音波風速計
+　DJI Marvic 2S
+ 　ドローンログ名　wx_data_20250125_123211.txt　等
+ 超音波風速計　TriSonica Mini　https://www.jepico.co.jp/lp_Anemoment.html
+　　データファイル名　wind_32.csv　等
 
 3　ドローン＋熱線風速計
 　ドローン　DJI Marvic3 Classic
