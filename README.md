@@ -43,4 +43,9 @@ https://strvsn.notion.site/strvsn/ULSA-d27ee8be0f4940fbbdfbd0df1c06e880#7d444ea0
 
  　熱線風速計　HWS-19-ONE　https://www.sg-lab.info/sensors/hws-19-one/
 　データファイル名　HWS_20250101.csv 等
+
+データ詳細
+時刻　風速（m/S）　　　風向は記録されません
+
+
   　
