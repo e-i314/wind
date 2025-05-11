@@ -25,14 +25,22 @@ https://strvsn.notion.site/strvsn/ULSA-d27ee8be0f4940fbbdfbd0df1c06e880#7d444ea0
 
 
 2　ドローン＋超音波風速計
-　DJI Marvic 2S
+　　DJI Marvic 2S
  　ドローンログ名　wx_data_20250125_123211.txt　等
- 超音波風速計　TriSonica Mini　https://www.jepico.co.jp/lp_Anemoment.html
+
+ 　超音波風速計　TriSonica Mini　https://www.jepico.co.jp/lp_Anemoment.html
 　　データファイル名　wind_32.csv　等
 
+データ詳細
+
+<img width="547" alt="{7CA4D44F-C6D6-4B20-A831-C352CBC08021}" src="https://github.com/user-attachments/assets/fbdb8754-24ef-4336-b801-cb793f428b0e" />
+
+
 3　ドローン＋熱線風速計
+
 　ドローン　DJI Marvic3 Classic
  　ドローンログ名　wx_data_20250125_123211.txt　等
- 熱線風速計　HWS-19-ONE　https://www.sg-lab.info/sensors/hws-19-one/
+
+ 　熱線風速計　HWS-19-ONE　https://www.sg-lab.info/sensors/hws-19-one/
 　データファイル名　HWS_20250101.csv 等
   　
