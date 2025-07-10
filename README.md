@@ -4,7 +4,7 @@ These are the measurement results from a ground-fixed ultrasonic anemometer, a d
 一部のデータフォルダには乱気流指数の解析結果（kml）が含まれています
 
 1　地上固定型（高さ7mの柱
-　センサー ULSA M5B (2025/4/22からULSA PROに変更）https://strvsn.net/ulsa
+　センサー ULSA M5B (2025/4/22から全天候型のULSA PROに変更）https://strvsn.net/ulsa
  　データファイル名　wind_11.txt 等
 　　データ詳細
 　　ULSA SimpleCSVプロトコル
