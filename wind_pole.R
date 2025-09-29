@@ -4,10 +4,10 @@ library(tidyr)
 library(lubridate)
 library(ggplot2)
 #library(influxdbclient)
-library(zoo)
-library(VGAM)  # Laplace分布の関数を利用
-library(stats) # KS検定
-library(signal)
+#library(zoo)
+#library(VGAM)  # Laplace分布の関数を利用
+#library(stats) # KS検定
+#library(signal)
 
 data_wind_original <- read_csv("https://raw.githubusercontent.com/e-i314/wind/main/20250125_Strong_MultiDrone_FrontYard/wind_20.csv", col_names = FALSE)
 
