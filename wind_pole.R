@@ -55,3 +55,16 @@ p <- ggplot(data = data_wind, aes(x = timestamp, y = windspd)) +
     y = "Wind Speed (m/s)"
   ) 
 print(p)
+
+ggplot(data = data_wind, aes(x = winddir, y = windspd)) +
+  geom_point(alpha = 0.1, size = 0.1) +
+  coord_polar(start = 0, direction = 1) +
+  scale_x_continuous(
+    limits = c(0, 360),
+    breaks = seq(0, 350, by = 10),   # 10°刻み
+    minor_breaks = NULL,   
+    labels = function(x) ifelse(x == 360, "0", x) 
+    ) +# 360°を0°に統一
+
+    xlab("Wind Direction(deg)")+
+    ylab("Wind Speed(m/s)")
