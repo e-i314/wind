@@ -135,3 +135,15 @@ data_wind$winddir_filtered <- lowpass_wind_dir(data_wind$winddir, fs = fs, cutof
                                  order = 4,
                                  weight = NULL,        # 風速で重み付け
                                  min_speed_for_dir = 0.5)   # 低風速はNA
+
+ggplot(data_wind[1000:1500,]) +
+  geom_line(aes(x = timestamp, y = windspd, color = "Raw")) +
+  geom_line(aes(x = timestamp, y = windspd_filtered, color = "Filtered")) +
+  labs(
+    title = "Effect of Low-pass Filter on Wind Speed",
+    x = "Time (sec)",
+    y = "Wind Speed (m/s)",
+    color = "Legend"
+  ) +
+  scale_color_manual(values = c("Raw" = "black", "Filtered" = "blue"))+
+  theme(legend.title = element_blank())
