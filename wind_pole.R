@@ -44,7 +44,8 @@ data_wind$temparature <- as.numeric(data_wind$temp)
 data_wind[is.na(data_wind)] <- 0
 data_wind$temp <- NULL
 
-head(data_wind)
+print(head(data_wind))
+
 p <- ggplot(data = data_wind, aes(x = timestamp, y = windspd)) +
   geom_line(size = 0.2, na.rm = FALSE) +  # NAはそのまま残す（線を切る）
   labs(
@@ -52,4 +53,4 @@ p <- ggplot(data = data_wind, aes(x = timestamp, y = windspd)) +
     x = "Time (hh:mm)",
     y = "Wind Speed (m/s)"
   ) 
-p
+print(p)
