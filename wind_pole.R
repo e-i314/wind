@@ -9,7 +9,7 @@ library(VGAM)  # Laplace分布の関数を利用
 library(stats) # KS検定
 library(signal)
 
-data_wind_original <- read_csv("https://raw.githubusercontent.com/e-i314/wind/20250125_Strong_MultiDrone_FrontYard/wind_20.csv", col_names = FALSE)
+data_wind_original <- read_csv("https://raw.githubusercontent.com/e-i314/wind/tree/main/20250125_Strong_MultiDrone_FrontYard/wind_20.csv", col_names = FALSE)
 
 #data_wind_original <- data_wind_original[1000:nrow(data_wind_original),]
 data_wind_original <- data_wind_original
