@@ -43,3 +43,11 @@ data_wind$temparature <- as.numeric(data_wind$temp)
 
 data_wind[is.na(data_wind)] <- 0
 data_wind$temp <- NULL
+
+ggplot(data = data_wind, aes(x = timestamp, y = windspd)) +
+  geom_line(size = 0.2, na.rm = FALSE) +  # NAはそのまま残す（線を切る）
+  labs(
+    title = "Time Series of Wind Speed",
+    x = "Time (hh:mm)",
+    y = "Wind Speed (m/s)"
+  ) 
