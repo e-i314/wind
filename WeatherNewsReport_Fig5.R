@@ -578,3 +578,96 @@ ggplot(df_median, aes(x = b_windfiltered_999, y = y_median)) +
        x = "b_windfiltered_999", y = "median of b_wind_0..b_wind_170") +
   xlim(0,1)+
   ylim(0,1.25)
+
+
+# 1) 横持ち化
+wide <- data_long_1sec[2000:20000, ] %>%
+  mutate(angle = as.character(angle)) %>%
+  pivot_wider(names_from = angle, values_from = value)
+
+# 2) b_wind_0..170 の max と min を計算
+cols_other <- grep("^b_wind_\\d+$", names(wide), value = TRUE)
+cols_other <- setdiff(cols_other, "b_wind_999")
+
+df_comp <- wide %>%
+  rowwise() %>%
+  mutate(
+    max_val = max(c_across(all_of(cols_other)), na.rm = TRUE),
+    min_val = min(c_across(all_of(cols_other)), na.rm = TRUE)
+  ) %>%
+  ungroup() %>%
+  transmute(
+    timestamp,
+    max_val,
+    min_val,
+    pred_val = 1.124 * `b_wind_999` + 0.034
+  ) %>%
+  tidyr::drop_na(max_val, min_val, pred_val)
+
+# 3) ロング形式にしてまとめてプロット
+df_long <- df_comp %>%
+  pivot_longer(cols = c("max_val", "min_val", "pred_val"),
+               names_to = "type", values_to = "value")
+
+# 4) 時系列プロット
+ggplot(df_long, aes(x = timestamp, y = value, color = type)) +
+  geom_line() +
+  labs(title = "Max/Min and Regression Prediction",
+       x = "Time",
+       y = "Wind Speed Change Rate (m/s^2)",
+       color = "") +
+  scale_color_manual(values = c(
+    "max_val" = "red",
+    "min_val" = "blue",
+    "pred_val" = "black"
+  )) +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 0, hjust = 1))+
+  ylim(0,.7)
+
+
+
+
+wide <- data_long_filtered_1sec[2000:20000, ] %>%
+  mutate(angle = as.character(angle)) %>%
+  pivot_wider(names_from = angle, values_from = value)
+
+# 2) b_wind_0..170 の max と min を計算
+cols_other <- grep("^b_windfiltered_\\d+$", names(wide), value = TRUE)
+cols_other <- setdiff(cols_other, "b_windfiltered_999")
+
+df_comp <- wide %>%
+  rowwise() %>%
+  mutate(
+    max_val = max(c_across(all_of(cols_other)), na.rm = TRUE),
+    min_val = min(c_across(all_of(cols_other)), na.rm = TRUE)
+  ) %>%
+  ungroup() %>%
+  transmute(
+    timestamp,
+    max_val,
+    min_val,
+    pred_val = 1.036 * `b_windfiltered_999` + 0.028
+  ) %>%
+  tidyr::drop_na(max_val, min_val, pred_val)
+
+# 3) ロング形式にしてまとめてプロット
+df_long <- df_comp %>%
+  pivot_longer(cols = c("max_val", "min_val", "pred_val"),
+               names_to = "type", values_to = "value")
+##########　図13
+# 4) 時系列プロット
+ggplot(df_long, aes(x = timestamp, y = value, color = type)) +
+  geom_line() +
+  labs(title = "Max/Min and Regression Prediction Filtered Data",
+       x = "Time",
+       y = "Wind Speed Change Rate (m/s^2)",
+       color = "")  +
+  scale_color_manual(values = c(
+    "max_val" = "red",
+    "min_val" = "blue",
+    "pred_val" = "black"
+  )) +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 0, hjust = 1))+
+  ylim(0,.7)
